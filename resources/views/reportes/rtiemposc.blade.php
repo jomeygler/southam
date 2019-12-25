@@ -17,8 +17,6 @@
                <br>
             </div>
           </div>
-
-
           <table class="table">
             <th>ID</th>
             <th>INICIO</th>
@@ -41,5 +39,6 @@
               @endforeach
           </table>
       </div>
+      <br>
   </div>
 @endsection

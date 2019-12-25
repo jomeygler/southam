@@ -8,6 +8,16 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+<style media="screen">
+  footer{
+    text-align: center;
+         font-family: sans-serif;
+         color: whitesmoke;
+         width: 100%;
+         bottom: 0;
+         position:relative;
+  }
+</style>
     <title>SOUTHAM</title>
   </head>
   <body style="width: 100%; height: 85%;">
@@ -55,9 +65,10 @@
 @yield('content')
 <footer >
           <div class="row text-right p-3 mb-2 bg-dark text-white  ">
-    <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-   <img   src="/ccb_logo.png" class="rounded float-right" alt="Responsive image" width="320" height="80">
+       <img   src="/ccb_logo.png" class="justify-content-end" alt="Responsive image" width="240" height="60">
+       <a href="https://www.ccbsolutions.cl/"> CCBSOLUTIONS</a>
         </div>
+
 </footer>
 
 </div>
