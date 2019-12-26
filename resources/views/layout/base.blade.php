@@ -9,26 +9,30 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <style media="screen">
+
   footer{
-    text-align: center;
-         font-family: sans-serif;
-         color: whitesmoke;
-         width: 100%;
-         bottom: 0;
-         position:relative;
+    width: 100%;
+    height: 81px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+  }
+
+  main{
+    max-height: 80%;
   }
 </style>
     <title>SOUTHAM</title>
   </head>
-  <body style="width: 100%; height: 85%;">
+  <body>
 
 <div class="container">
   <div class="row">
     <div class="col-1">
 <img src = "/isofrut.png" class="rounded float-center" alt="Responsive image" width="90" height="80">
     </div>
-    <div class="col-11">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+    <div class="col-11" >
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark pb-4 pt-6" >
 
           <!--<a class="navbar-brand" href="#">Southam</a>-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,17 +65,16 @@
       </nav>
     </div>
   </div>
-
-@yield('content')
-<footer >
-          <div class="row text-right p-3 mb-2 bg-dark text-white  ">
+<main>
+  @yield('content')
+</main>
+<footer>
+          <div class="row text-right p-3 mb-2 bg-dark text-white pb-1 pt-6">
        <img   src="/ccb_logo.png" class="justify-content-end" alt="Responsive image" width="240" height="60">
        <a href="https://www.ccbsolutions.cl/"> CCBSOLUTIONS</a>
         </div>
 
 </footer>
-
-</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
