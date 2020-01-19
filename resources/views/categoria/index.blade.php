@@ -7,7 +7,12 @@
           <br>
           <a class="btn btn-primary" href="/categoria/create">Nuevo</a>
            <br>
-          <table class="table">
+           <table class="table table-striped">
+           <thead class="thead-dark">
+             <th>NOMBRE</th>
+             <th>EDITAR</th>
+             <th>ELIMINAR</th>
+           </thead>
               @foreach($categorias as $Categorias)
                   <tr>
                       <td><a href="/tipo/{{ $Categorias->id }}">{{ $Categorias->nombre }}</a></td>

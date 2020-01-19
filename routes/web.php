@@ -21,7 +21,7 @@ Route::resource('/categoria', 'CategoriaController' );
 Route::resource('/tiempo', 'TiempoController' );
 //Route::get('/tiempo/{tiempo}/eventos/create', 'EventoController@create');
 //Route::post('/tiempo/{tiempo}/eventos', 'EventoController@store');
-Route::get('/articulo/{id}/ConfirmaD', 'CategoriaController@ConfirmaD');
+Route::get('/articulo/{id}/ConfirmaD', 'ArcticuloController@ConfirmaD');
 Route::get('/tunel/{id}/ConfirmaD', 'TunelController@ConfirmaD');
 Route::get('/tipo/{id}/ConfirmaD', 'CategoriaController@ConfirmaD');
 Route::get('/categoria/{id}/ConfirmaD', 'TipoCotroller@ConfirmaD');

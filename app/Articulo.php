@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\tipo;
 use App\Categoria;
 use App\Tiempos;
+use App\rtiemposc;
 
 class Articulo extends Model
 {

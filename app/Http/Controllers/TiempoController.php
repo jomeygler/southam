@@ -10,7 +10,7 @@ use App\Articulo;
 use App\Exports\ExportTiempos;
 use App\Imports\ImportTiempos;
 use Maatwebsite\Excel\Facades\Excel;
-
+use DB;
 
 
 class TiempoController extends Controller
@@ -27,11 +27,19 @@ class TiempoController extends Controller
      */
     public function index()
     {
+  //   return view ('tiempo.index', [$exp1 = DB::table('tiempos')
+  //           ->join('articulos', 'articulos.id', '=' ,'tiempos.articulo_id')
+  //           ->select('tiempos.*',  'articulos.nombre as nombredeart')
+  //           ->paginate(15)
+  //  'tiempos' => tiempos::orderBy('fin', 'DESC')->paginate(15)
 
-      return view ('tiempo.index', [
-    'tiempos' => tiempos::orderBy('fin', 'DESC')->paginate(15)
-    //->get()
-    ]);
+  //   ]);
+              return view ('tiempo.index', ['tiempos' =>tiempos::join('articulos', 'articulos.id', '=' ,'tiempos.articulo_id')
+             ->select('tiempos.*',  'articulos.nombre as nombredeart')
+             ->orderBy('fin', 'DESC')
+             ->paginate(15)
+             ]);
+//return var_dump($tiempos);
         //
     }
 
@@ -136,6 +144,10 @@ class TiempoController extends Controller
      */
     public function destroy($id)
     {
+
+      $tiempos = tiempos::findorfail($id);
+      $tiempos->delete ();
+      return redirect('/tiempo');
         //
     }
 
@@ -162,7 +174,15 @@ class TiempoController extends Controller
    public function import()
    {
        Excel::import(new ImportTiempos, request()->file('file'));
-
        return back();
    }
+
+
+      public function ConfirmaD($id)
+    {
+      $tiempo= tiempos::find($id);
+      return view('/tiempo.confirmad', [
+      'tiempo' => $tiempo
+    ]);
+}
 }

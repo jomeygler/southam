@@ -17,19 +17,23 @@
                <br>
             </div>
           </div>
-          <table class="table">
+          <table class="table table-striped">
+          <thead class="thead-dark">
             <th>ID</th>
             <th>INICIO</th>
             <th>FIN</th>
+            <th>PRODUCTO</th>
             <th>LINEA</th>
             <th>MENOS</th>
             <th>MAS</th>
             <th>COMENTARIOS</th>
+          </thead>
               @foreach($Tiempos as $tiempo)
                   <tr>
                       <td>{{ $tiempo->id }}</td>
                       <td>{{ $tiempo->inicio }}</td>
                       <td>{{ $tiempo->fin }}</td>
+                      <td>{{ $tiempo->nombredeart }}</td>
                       <td>{{ $tiempo->linea }}</td>
                       <td>{{ $tiempo->menost }}</td>
                       <td>{{ $tiempo->mast }}</td>

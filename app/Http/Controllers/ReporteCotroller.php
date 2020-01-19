@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\TiempoController;
 use Illuminate\Support\Facades\DB;
 use App\Tiempos;
+use App\Articulo;
 //use DB;
 use Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -32,9 +33,12 @@ return view('reportes.rtiempos');
 public function rtiemposc(Request $request, Tiempos $tiempos )
 {
 
-return view('reportes.rtiemposc' ,['Tiempos' => Tiempos::select("tiempos.*")
-           ->whereBetween('inicio', [Request('inicio'), Request('fin')])->get()]);
+//return view('reportes.rtiemposc' ,['Tiempos' => Tiempos::select("tiempos.*")
+//           ->whereBetween('inicio', [Request('inicio'), Request('fin')])->get()]);
 
+return view('reportes.rtiemposc' ,['Tiempos' =>Tiempos::join('articulos', 'articulos.id', '=' ,'tiempos.articulo_id')
+                                                ->select('tiempos.*', 'articulos.nombre as nombredeart')
+                                                ->whereBetween('inicio', [Request('inicio'), Request('fin')])->get()]);
 //return  Tiempos::select("tiempos.*" )->whereBetween('inicio', [Request('inicio'), Request('fin')])->get();
 //return  Request::all();
 

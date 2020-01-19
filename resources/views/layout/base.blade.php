@@ -56,8 +56,8 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="/articulo">Productos</a>
                 <a class="dropdown-item" href="/tipo">Tipos de Productos</a>
-                <a class="dropdown-item" href="#">Another</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="/categoria">Categoria</a>
+                <a class="dropdown-item" href="/tunel">Tuneles</a>
               </div>
             </li>
           </ul>

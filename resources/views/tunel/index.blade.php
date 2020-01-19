@@ -7,7 +7,12 @@
           <br>
           <a class="btn btn-primary" href="/tunel/create">Nuevo</a>
            <br>
-          <table class="table">
+            <table class="table table-striped">
+            <thead class="thead-dark">
+            <th>NOMBRE</th>
+            <th>EDITAR</th>
+            <th>ELIMINAR</th>
+            <thead>
               @foreach($tunels as $Tunel)
                   <tr>
                       <td><a href="/tunel/{{ $Tunel->id }}">{{ $Tunel->nombre }}</a></td>
