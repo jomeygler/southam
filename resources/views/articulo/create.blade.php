@@ -25,16 +25,23 @@
                 </div>
             @endif
       <form class="form-horizontal" action="/articulo" method="POST">
-
         <div class="form-group">
-          <label for="nombre">Nombre</label>
-          <br>
-          <input type="text" class="form-control" id="nombre"  name="nombre" placeholder="dime el nombre" value="{{old('nombre')}}">
-          <br>
-          <label for="nombre">Fecha Ingreso</label>
-          <br>
-          <input type="date" class="form-control" id="fecha"  name="fecha" placeholder="dime cuando empezo" value="{{old('fecha')}}">
-          <br>
+          <div class="row">
+            <div class="col">
+              <label for="nombre">Nombre</label>
+              <br>
+              <input type="text" class="form-control" id="nombre"  name="nombre" placeholder="dime el nombre" value="{{old('nombre')}}">
+              <br>
+            </div>
+            <div class="col">
+              <label for="nombre">Fecha Ingreso</label>
+              <br>
+              <input type="date" class="form-control" id="fecha"  name="fecha" placeholder="dime cuando empezo" value="{{'01/01/1999'}}">
+              <br>  
+            </div>
+
+          </div>
+
             <div class="form-group">
             <label for="">tipo</label>
             <select class="form-control" name="tipo" id="tipo">
@@ -55,15 +62,7 @@
           </div>          <br>
           <label for="nombre">costo</label>
           <br>
-          <input type="integer" class="form-control" id="costo"  name="costo" placeholder="dime dime el rut" value="{{old('rut')}}">
-          <br>
-          <div class="checkbox">
-        <label>
-        <input type="checkbox" data-toggle="toggle">
-          Option one is enabled
-          </label>
-           </div>
-          <input type="checkbox" checked data-toggle="toggle" data-on="Hombre" data-off="Mujer">
+          <input type="integer" class="form-control" id="costo"  name="costo" placeholder="costo" value="{{old('costo')}}">
           <br>
 
           <br>

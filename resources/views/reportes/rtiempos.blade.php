@@ -22,14 +22,21 @@
                <form class="form-horizontal" action="/reportes/rtiemposc" method="POST">
 
                  <div class="form-group">
-                   <label for="inicio">inicio</label>
-                   <br>
-                   <input type="date" class="form-control" id="inicio"  name="inicio" value="">
-                   <br>
-                   <label for="final">fin</label>
-                   <br>
-                   <input type="date" class="form-control" id="fin"  name="fin" value="">
-                   <br>
+                   <div class="row">
+                     <div class="col">
+                       <label for="inicio">inicio</label>
+                       <br>
+                       <input type="date" class="form-control" id="inicio"  name="inicio" value="">
+                       <br>
+                     </div>
+                     <div class="col">
+                       <label for="final">fin</label>
+                       <br>
+                       <input type="date" class="form-control" id="fin"  name="fin" value="">
+                       <br>
+                     </div>
+                  </div>
+
                    <br>
                    <button class="btn btn-primary" type="submit" name="Consulta">Consulta</button>
                    <br>
