@@ -23,6 +23,7 @@
             <th>INICIO</th>
             <th>FIN</th>
             <th>PRODUCTO</th>
+            <th>CATEGORIA</th>
             <th>LINEA</th>
             <th>MENOS</th>
             <th>MAS</th>
@@ -34,6 +35,7 @@
                       <td>{{ $tiempo->inicio }}</td>
                       <td>{{ $tiempo->fin }}</td>
                       <td>{{ $tiempo->nombredeart }}</td>
+                      <td>{{ $tiempo->nombrecat }}</td>
                       <td>{{ $tiempo->linea }}</td>
                       <td>{{ $tiempo->menost }}</td>
                       <td>{{ $tiempo->mast }}</td>

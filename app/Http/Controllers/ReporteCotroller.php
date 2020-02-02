@@ -37,7 +37,8 @@ public function rtiemposc(Request $request, Tiempos $tiempos )
 //           ->whereBetween('inicio', [Request('inicio'), Request('fin')])->get()]);
 
 return view('reportes.rtiemposc' ,['Tiempos' =>Tiempos::join('articulos', 'articulos.id', '=' ,'tiempos.articulo_id')
-                                                ->select('tiempos.*', 'articulos.nombre as nombredeart')
+                                                ->select('tiempos.*', 'articulos.nombre as nombredeart', 'categorias.nombre as nombrecat')
+                                                ->join ('categorias', 'categorias.id', '=' ,'articulos.categoria')
                                                 ->whereBetween('inicio', [Request('inicio'), Request('fin')])->get()]);
 //return  Tiempos::select("tiempos.*" )->whereBetween('inicio', [Request('inicio'), Request('fin')])->get();
 //return  Request::all();
