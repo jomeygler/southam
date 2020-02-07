@@ -5,9 +5,10 @@
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <div class="row">
       <div class="col">
-          <h1>Tipo Nuevo</h1>
+          <h1>Tipo cliente Nuevo</h1>
           <br>
-          <a class="btn btn-primary" href="/tipo">Regresa</a>
+          <a class="btn btn-primary" href="/tipo_cliente">Regresa</a>
+           <br>
            <br>
           <table class="table">
           </table>
@@ -24,23 +25,21 @@
                     </ul>
                 </div>
             @endif
-      <form class="form-horizontal" action="/tipo" method="POST">
+      <form class="form-horizontal" action="/tipo_cliente" method="POST">
 
         <div class="form-group">
           <label for="nombre">Nombre</label>
           <br>
           <input type="text" class="form-control" id="nombre"  name="nombre" value="">
           <br>
+          <input type="text" class="form-control" id="dato1"  name="dato1" value="1">
+          <br>
           <br>
           <button class="btn btn-primary" type="submit" name="Guarda">Guarda</button>
           <br>
-
           @csrf
-
         </div>
       </form>
-
     </div>
-
   </div>
 @endsection

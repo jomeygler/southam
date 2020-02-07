@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTiempoMidificador extends Migration
+class AddColunnClienteCreate extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class AddTiempoMidificador extends Migration
      */
     public function up()
     {
-        Schema::table('tiempos', function (Blueprint $table)
-         {
-        $table->time('mast');
-        $table->time('menost');});
-        
+      Schema::table('clientes', function (Blueprint $table) {
+      $table->timestamps();
+    });
+        //
     }
 
     /**

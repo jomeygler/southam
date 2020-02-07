@@ -5,9 +5,9 @@
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <div class="row">
       <div class="col">
-          <h1>Tipo Nuevo</h1>
+          <h1>Tunel Nuevo</h1>
           <br>
-          <a class="btn btn-primary" href="/tipo">Regresa</a>
+          <a class="btn btn-primary" href="/tunel">Regresa</a>
            <br>
           <table class="table">
           </table>
@@ -24,7 +24,7 @@
                     </ul>
                 </div>
             @endif
-      <form class="form-horizontal" action="/tipo" method="POST">
+      <form class="form-horizontal" action="/tunel" method="POST">
 
         <div class="form-group">
           <label for="nombre">Nombre</label>
