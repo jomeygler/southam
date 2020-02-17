@@ -5,19 +5,22 @@
       <div class="col">
           <h1>Articulos</h1>
           <br>
-          <a class="btn btn-primary" href="/tunel/create">Nuevo</a>
+          <a class="btn btn-primary" href="/seguimiento/create">Nuevo</a>
+           <br>
            <br>
             <table class="table table-striped">
             <thead class="thead-dark">
             <th>NOMBRE</th>
+            <th>DESCRIPCION</th>
             <th>EDITAR</th>
             <th>ELIMINAR</th>
             <thead>
-              @foreach($tunels as $Tunel)
+              @foreach($seguimiento as $seguimiento)
                   <tr>
-                      <td><a href="/tunel/{{ $Tunel->id }}">{{ $Tunel->nombre }}</a></td>
-                      <td> <a class="btn btn-primary" href="/tunel/{{$Tunel->id}}/edit">Editar</a></td>
-                        <td> <a class="btn btn-primary" href="/tunel/{{$Tunel->id}}/ConfirmaD">eliminar</a></td>
+                      <td><a href="/seguimiento/{{ $seguimiento->id }}">{{ $seguimiento->id }}</a></td>
+                      <td><a href="/seguimiento/{{ $seguimiento->descrip }}">{{ $seguimiento->descrip }}</a></td>
+                      <td> <a class="btn btn-primary" href="/seguimiento/{{$seguimiento->id}}/edit">Editar</a></td>
+                        <td> <a class="btn btn-primary" href="/seguimiento/{{$seguimiento->id}}/ConfirmaD">eliminar</a></td>
                   </tr>
               @endforeach
           </table>
