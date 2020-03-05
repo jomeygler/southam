@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\seguimiento;
 use App\cliente;
+use App\localentrega;
 
 class SeguimientoController extends Controller
 {
@@ -29,6 +30,7 @@ class SeguimientoController extends Controller
   //   ]);
               return view ('seguimiento.index', ['seguimiento' =>seguimiento::join('clientes', 'clientes.id', '=' ,'seguimientos.cliente_id')
              ->select('seguimientos.*',  'clientes.cli_des as nombrecliente')
+             ->join('localentregas', 'localentregas.id', '=' , 'seguimientos.localentrega_id')
              ->orderBy('fecha_desp', 'DESC')
              ->paginate(15)
              ]);
@@ -38,11 +40,12 @@ class SeguimientoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(cliente $cliente)
+    public function create(localentrega $localentrega, cliente $cliente)
     {
 
       $cliente = cliente::all();
-      return view ('seguimiento.create',['clientes'=>$cliente ]);
+      $localentrega = localentrega::all();
+      return view ('seguimiento.create',['clientes'=>$cliente, 'localentrega'=>$localentrega]);
         //
     }
 
@@ -52,11 +55,11 @@ class SeguimientoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(cliente $cliente, Request $request)
+    public function store(localentrega $localentrega, cliente $cliente, Request $request)
     {
 
       $DaliData = $request->validate([
-        'nro_orden' => 'required|min:4',
+        'nro_orden' => 'required',
         'lote' => 'required',
         'uni_emq' => 'required',
         'uni_ped' => 'required'
@@ -72,7 +75,7 @@ class SeguimientoController extends Controller
       $seguimiento-> fecha_ela = $request->get('fecha_ela');
       $seguimiento-> fecha_desp = $request->get('fecha_desp');
       $seguimiento-> descrip = $request->get('descrip');
-
+      $seguimiento-> localentrega_id = $request->get('localentrega_id');
       $seguimiento-> save ();
       return redirect('/seguimiento');
 

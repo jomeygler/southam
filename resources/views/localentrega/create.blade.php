@@ -5,9 +5,9 @@
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <div class="row">
       <div class="col">
-          <h1>Cliente Nuevo</h1>
+          <h1>Nueva local</h1>
           <br>
-          <a class="btn btn-primary" href="/cliente">Regresa</a>
+          <a class="btn btn-primary" href="/localentrega">Regresa</a>
            <br>
           <table class="table">
           </table>
@@ -24,36 +24,16 @@
                     </ul>
                 </div>
             @endif
-      <form class="form-horizontal" action="/cliente" method="POST">
+      <form class="form-horizontal" action="/localentrega" method="POST">
 
         <div class="form-group">
           <label for="nombre">Nombre</label>
           <br>
-          <input type="text" class="form-control" id="cli_des"  name="cli_des" value="">
-          <br>
-          <label for="nombre">RUT</label>
-          <br>
-          <input type="text" class="form-control" id="rut"  name="rut" value="">
+          <input type="text" class="form-control" id="nombreentrega"  name="nombreentrega" value="">
           <br>
           <label for="nombre">Direcion</label>
           <br>
-          <input type="text" class="form-control" id="direccion"  name="direccion" value="">
-          <br>
-          <label for="nombre">Telefono</label>
-          <br>
-          <input type="text" class="form-control" id="telefono"  name="telefono" value="">
-          <br>
-          <label for="nombre">Correo</label>
-          <br>
-          <input type="text" class="form-control" id="correo"  name="correo" value="">
-          <br>
-          <label for="nombre">Referencia</label>
-          <br>
-          <input type="text" class="form-control" id="referencia"  name="referencia" value="">
-          <br>
-          <label for="nombre">Pagina</label>
-          <br>
-          <input type="text" class="form-control" id="pagina"  name="pagina" value="">
+          <input type="text" class="form-control" id="direc"  name="direc" value="">
           <br>
           <label for="Fecha">fecha</label>
           <br>
@@ -61,10 +41,10 @@
           <br>
           <div class="row">
                 <div class="col">
-                  <label for="">tipo cliente</label>
-                  <select class="form-control" name="tipo_cli" id="tipo_cli">
-                       @foreach($tipo_cliente as $tipo_cliente)
-         <option value="{{$tipo_cliente['id']}}">{{$tipo_cliente['nombre']}}</option>
+                  <label for="">Cliente</label>
+                  <select class="form-control" name="cliente_id" id="cliente_id">
+                       @foreach($clientes as $cliente)
+         <option value="{{$cliente['id']}}">{{$cliente['cli_des']}}</option>
                        @endforeach
                        </select>
                   <br>

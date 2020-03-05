@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\TipoClienteController;
+
 use App\cliente;
-use App\tipo_cliente;
+use App\localentrega;
 
-class ClienteController extends Controller
+class LocalEntregaController extends Controller
 {
-
   public function __construct()
 {
     $this->middleware('auth');
@@ -21,7 +20,7 @@ class ClienteController extends Controller
      */
     public function index()
     {
-      return view ('cliente.index', ['clientes' => cliente::all()]);
+         return view ('localentrega.index', ['localentregas' => localentrega::all()]);
         //
     }
 
@@ -30,13 +29,12 @@ class ClienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(tipo_cliente $tipo_cliente)
+    public function create(cliente $cliente)
     {
-        $cliente = cliente::all();
-        $tipo_cliente = tipo_cliente::all();
-        return view ('cliente.create', ['clientes' => $cliente, 'tipo_cliente' => $tipo_cliente]);
+      $cliente = cliente::all();
+      $localentrega = localentrega::all();
+      return view ('localentrega.create', ['clientes' => $cliente, 'localentregas' => $localentrega]);
 
-        //
     }
 
     /**
@@ -45,29 +43,24 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(tipo_cliente $tipo_cliente, Request $request )
+    public function store(cliente $cliente, Request $request)
     {
       {
         $DaliData = $request->validate([
-          'cli_des' => 'required|min:4',
-          'fecha' => 'required',
-          'direccion' => 'required'
-
+          'nombreentrega' => 'required|min:4',
+          'direc' => 'required',
+          'cliente_id' => 'required'
        ]);
-        $cliente = new cliente ();
-        $cliente-> cli_des = $request->get('cli_des');
-        $cliente-> fecha = $request->get('fecha');
-        $cliente-> rut = $request->get('rut');
-        $cliente-> tipo_cli = $request->get('tipo_cli');
-        $cliente-> telefono = $request->get('telefono');
-        $cliente-> correo = $request->get('correo');
-        $cliente-> pagina = $request->get('pagina');
-        $cliente-> referencia = $request->get('referencia');
-        //$cliente-> costo = $request->get('costo');
-        $cliente-> direccion = $request->get('direccion');
-        $cliente-> save ();
-        return redirect('/cliente');  //
-      }//
+
+        $localentrega = new localentrega ();
+        $localentrega-> nombreentrega = $request->get('nombreentrega');
+        $localentrega-> direc = $request->get('direc');
+        $localentrega-> cliente_id = $request->get('cliente_id');
+        $localentrega-> save();
+        return redirect('/localentrega');
+      }
+
+
     }
 
     /**
@@ -78,6 +71,7 @@ class ClienteController extends Controller
      */
     public function show($id)
     {
+
         //
     }
 

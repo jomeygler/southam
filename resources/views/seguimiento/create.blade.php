@@ -5,7 +5,7 @@
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <div class="row">
       <div class="col">
-          <h1>Tunel Nuevo</h1>
+          <h1>Registro Nuevo</h1>
           <br>
           <a class="btn btn-primary" href="/seguimiento">Regresa</a>
            <br>
@@ -32,6 +32,15 @@
             <label for="nombre">Orden de Compra</label>
             <br>
             <input type="text" class="form-control" id="nro_orden"  name="nro_orden" value="">
+            <br>
+          </div>
+          <div class="col">
+            <label for="">Local de entrega</label>
+            <select class="form-control" name="localentrega_id" id="localentrega_id">
+                 @foreach($localentrega as $localentrega)
+   <option value="{{$localentrega['id']}}">{{$localentrega['nombreentrega']}}</option>
+                 @endforeach
+                 </select>
             <br>
           </div>
           <div class="col">

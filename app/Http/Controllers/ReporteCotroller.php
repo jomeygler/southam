@@ -7,11 +7,13 @@ use App\Http\Controllers\TiempoController;
 use Illuminate\Support\Facades\DB;
 use App\Tiempos;
 use App\Articulo;
+use App\seguimiento;
+use App\rseguimiento;
 //use DB;
 use Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\ReportesExport;
-
+use App\Exports\seguimientoExport;
 
 class ReporteCotroller extends Controller
 {
@@ -27,29 +29,38 @@ class ReporteCotroller extends Controller
 
 public function rtiempos()
 {
-//  $data = DB::select("call r_tiempos(?, ?)", array($inicio, $fin));
 return view('reportes.rtiempos');
 }
-public function rtiemposc(Request $request, Tiempos $tiempos )
+public function rtiemposc(Request $request, Tiempos $tiempos)
 {
-
-//return view('reportes.rtiemposc' ,['Tiempos' => Tiempos::select("tiempos.*")
-//           ->whereBetween('inicio', [Request('inicio'), Request('fin')])->get()]);
-
+//aqui comienza el reporte de los tuneles
 return view('reportes.rtiemposc' ,['Tiempos' =>Tiempos::join('articulos', 'articulos.id', '=' ,'tiempos.articulo_id')
                                                 ->select('tiempos.*', 'articulos.nombre as nombredeart', 'categorias.nombre as nombrecat')
                                                 ->join ('categorias', 'categorias.id', '=' ,'articulos.categoria')
                                                 ->whereBetween('inicio', [Request('inicio'), Request('fin')])->get()]);
-//return  Tiempos::select("tiempos.*" )->whereBetween('inicio', [Request('inicio'), Request('fin')])->get();
-//return  Request::all();
-
 }
 public function export(){
         return Excel::download(new ReportesExport, 'reporte_tiempos.xlsx');
-    //  $tiempos = Tiempos::select("tiempos.*")
-    //             ->whereBetween('inicio', [Request('inicio'), Request('fin')])->get();
-//        return Excel::download(new $datos, 'reporte_tiempos.xlsx');
-//return var_dump([Request('fin')]);
+
     }
-    //
+    //aqui termina reporte de los tuneles
+//
+//
+///aqui comienza el reporte de los seguimientos
+public function rseguit()
+{
+return view('reportes.rseguit');
+}
+public function rseguimiento(Request $request, seguimiento $seguimiento)
+{
+return view('reportes.rseguimiento' ,['seguimientos' => seguimiento::join('clientes', 'clientes.id', '=' ,'seguimientos.cliente_id')
+                                       ->select('seguimientos.*', 'clientes.cli_des as nomcliente', 'localentregas.nombreentrega as nomentrega')
+                                       ->join('localentregas', 'localentregas.id', '=', 'seguimientos.localentrega_id')
+                                       ->whereBetween('fecha_ela', [Request('inicio'), Request('fin')])->get()]);
+
+
+}
+public function export2(){
+        return Excel::download(new seguimientoExport, 'reporte_seguimiento.xlsx');
+}
 }

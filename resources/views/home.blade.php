@@ -32,7 +32,7 @@
     <img src="/isofrut.png" class="card-img-top" alt="...">
     <div class="card-body">
       <h4 class="card-title">Bodega</h4>
-      <a class="btn btn-info" href="#">Reg de Facturas</a>
+      <a class="btn btn-info" href="/seguimiento">Seguimientos Factura</a>
       <p class="card-text">...</p>
     </div>
   </div>

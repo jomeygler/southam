@@ -12,7 +12,12 @@
           <thead>
 
                   <tr>
-                      <td><a href="/reportes/rtiempos">Tiempos en los tuneles</a></td>
+                    <div class="row">
+                       <td><a href="/reportes/rtiempos">Tiempos en los tuneles</a></td>
+                    </div>
+                    <div class="row">
+                       <td><a href="/reportes/rseguit">Seguimiento</a></td>  
+                    </div>
 
                   </tr>
 

@@ -54,10 +54,15 @@
                 Tablas
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <h5>Productos</h5>
                 <a class="dropdown-item" href="/articulo">Productos</a>
                 <a class="dropdown-item" href="/tipo">Tipos de Productos</a>
                 <a class="dropdown-item" href="/categoria">Categoria</a>
                 <a class="dropdown-item" href="/tunel">Tuneles</a>
+                <h5>Clientes</h5>
+                <a class="dropdown-item" href="/cliente">Clientes</a>
+                <a class="dropdown-item" href="/tipo_cliente">Tipo Clientes</a>
+                <a class="dropdown-item" href="/localentrega">Local de Entrega</a>
               </div>
             </li>
           </ul>
